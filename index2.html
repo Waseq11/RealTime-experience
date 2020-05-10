@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+	<html lang="eng">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<head>
+		<title>Project 30 by Mohammed Waseq Rahman</title>
+	</head>
+<script>
+	document.addEventListener('DOMContentLoaded', function()
+	{
+	let wrapper = document.getElementById('wrapper');
+	let topLayer = wrapper.querySelector('.top');
+	let handle = wrapper.querySelector('.handle');
+	let skew = 0;
+	let delta = 0;
+
+	if(wrapper.className.indexOf('skewed') != -1)
+	{
+		skew = 1000;
+	}
+  
+	wrapper.addEventListener('mousemove', function(e)
+	{
+		delta = (e.clientX - window.innerWidth / 2) * 0.5;
+		handle.style.left = e.clientX + delta + 'px';
+		topLayer.style.width= e.clientX + skew + delta + 'px';
+	});
+	});
+</script>
+<body>
+<h2><strong>Experience the same picture in different views in Real Time</strong></h2>
+<section id="wrapper" class="skewed">
+    <div class="layer bottom">
+      <div class="content-wrap">
+        <div class="content-body">
+          <h1>Normal View</h1>
+		  <p>
+			A design or representation made by various means (such as painting, drawing, or photography) description so vivid or graphic as to suggest a mental image or give an accurate idea of something the book gives a detailed picture of what is happening.
+		  </p>
+        </div>
+        <img src="./image1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="layer top">
+        <div class="content-wrap">
+          <div class="content-body">
+            <h1>Negative View</h1>
+		  <p>
+			In photography, a negative is an image, usually on a strip or sheet of transparent plastic film, in which the lightest areas of the photographed subject appear darkest and the darkest areas appear lightest.
+		  </p>			
+          </div>
+          <img src="./image2.jpg" alt="">
+        </div>
+      </div>
+
+      <div class="handle"></div>
+
+</body>
+</html>
